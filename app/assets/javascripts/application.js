@@ -13,10 +13,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
+//= require select2
 //= require turbolinks
+//= require cocoon
+//= require coffee_routes
 //= require application
 //= require helpers
 //= require home
+//= require images
 (function(){
 	window.PhotoBook = {
     	Views: {},

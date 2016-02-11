@@ -1,0 +1,24 @@
+<% unless f.object.persisted? %>
+<div class='row'>
+  <div class="col-md-12">
+      <h2>Image</h2>
+      <div class="form-group">
+         <%= f.label :file %>
+         <%= f.file_field :file, class: "form-control" %>
+      </div>
+      <div class="form-group">
+         <%= f.label :description %>
+         <%= f.text_field :description, class: "form-control", data: { field: 'desc' } %>
+      </div>
+      <div class="form-group">
+        <%= f.label :tags %>
+        <select id="select_change" name="select_change" class="form-control" multiple="multiple" data-field="tag">
+        </select>
+      </div>
+  </div>
+
+  <%= f.hidden_field :lat, data: { field: 'lat' } %>
+  <%= f.hidden_field :lng, data: { field: 'lng' } %>
+  <%= link_to_remove_association "remove image", f %>
+</div>
+<%end%>

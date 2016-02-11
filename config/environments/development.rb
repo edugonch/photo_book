@@ -38,12 +38,14 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
+  config.consider_all_requests_local = true
+
   config.paperclip_defaults = {
     :storage => :s3,
     :s3_credentials => {
-      :bucket => 'eduardo.photobook',
-      :access_key_id => 'edugonch',
-      :secret_access_key => 'yx3t45ik50'
+      :bucket => Rails.application.secrets.s3_credentials_bucket,
+      :access_key_id => Rails.application.secrets.s3_credentials_access_key_id,
+      :secret_access_key => Rails.application.secrets.s3_credentials_secret_access_key
     }
   }
 
