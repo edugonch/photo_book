@@ -15,7 +15,7 @@ class ImagesController < ApplicationController
   def create
     current_user.update_attributes(image_params)
     if current_user.save
-      redirect_to profile_path
+      redirect_to profile_path(current_user.id)
     else
       @user = current_user
       render 'new'
