@@ -34,8 +34,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem "twitter-bootstrap-rails", github: 'torstenb/twitter-bootstrap-rails'
 
-gem "jquery-rails"
-
 gem "devise"
 
 gem "factory_girl_rails"
@@ -51,6 +49,12 @@ gem "select2-rails"
 gem "js-routes"
 
 gem 'active_model_serializers'
+
+gem 'will_paginate', '~> 3.0.6'
+
+gem 'will_paginate-bootstrap'
+
+gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
 
 group :test do
   gem 'capybara'

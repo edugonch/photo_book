@@ -3,7 +3,7 @@ class ImagesController < ApplicationController
 
   def index
     if params[:lat].present? && params[:lng].present?
-      @images = Image.where(lat: params[:lat], lng: params[:lng])
+      @images = Image.where(lat: params[:lat], lng: params[:lng]).paginate(:page => params[:page], :per_page => 10)
     end
   end
 
