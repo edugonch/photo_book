@@ -1,0 +1,5 @@
+<div class="infoBox">
+  <% images.each do |img| %>
+    <div class="slide"><%= image_tag img.file.url(:medium) %></div>
+  <%end%>
+</div>

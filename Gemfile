@@ -32,7 +32,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem "twitter-bootstrap-rails"
+gem "twitter-bootstrap-rails", github: 'torstenb/twitter-bootstrap-rails'
 
 gem "jquery-rails"
 
@@ -48,7 +48,9 @@ gem "cocoon"
 
 gem "select2-rails"
 
-gem 'coffee_routes'
+gem "js-routes"
+
+gem 'active_model_serializers'
 
 group :test do
   gem 'capybara'

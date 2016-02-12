@@ -42,7 +42,7 @@ class PhotoBook.Views.NewImage
       draggable: true
       map: @map)
     google.maps.event.addListener @marker, 'dragend', ->
-      self.setPosition @marker.getPosition()
+      self.setPosition self.marker.getPosition()
       return
     $('#images').closest("form").on 'cocoon:before-insert', (e, insertedItem) ->
       console.debug(e)
@@ -57,7 +57,7 @@ class PhotoBook.Views.NewImage
         multiple: true
         ajax:
           global: false
-          url: tags_path() + ".json"
+          url: Routes.tags_path() + ".json"
           dataType: 'json'
           data: (term, page) ->
             { q: term }

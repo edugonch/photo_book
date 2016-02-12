@@ -15,8 +15,10 @@
 //= require twitter/bootstrap
 //= require select2
 //= require turbolinks
+//= require jquery.bxslider.min
+//= require gmaps
 //= require cocoon
-//= require coffee_routes
+//= require js-routes
 //= require application
 //= require helpers
 //= require home
