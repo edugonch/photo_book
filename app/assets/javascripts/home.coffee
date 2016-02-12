@@ -17,57 +17,28 @@ class PhotoBook.Views.Home
 		  success: (response) ->
         console.debug response
         for mkr in response
-          console.debug(mkr)
-          markerLatLng = new (google.maps.LatLng)(mkr.lat, mkr.lng)
-          infobox = new InfoBox(
-            content: mkr.html
-            disableAutoPan: false
-            maxWidth: 0
-            pixelOffset: new (google.maps.Size)(-140, 0)
-            zIndex: null
-            boxStyle:
-              background: 'url(\'http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/examples/tipbox.gif\') no-repeat'
-              width: '200px'
-            closeBoxMargin: '12px 4px 2px 2px'
-            closeBoxURL: 'http://www.google.com/intl/en_us/mapfiles/close.gif'
-            infoBoxClearance: new (google.maps.Size)(1, 1)
-            pane: 'floatPane'
-            isHidden: false)
-          marker = new (google.maps.Marker)(
-            position: markerLatLng
-            map: self.map
-            title: 'Images in this point')
-          marker.addListener 'click', ->
-            infobox.open self.map, this
-          self.markers.push(marker)
-		   dataType: 'json'
+          self.map.addMarker(
+            lat: mkr.lat
+            lng: mkr.lng
+            infoWindow:
+              content: mkr.html
+              domready: ->
+                $('#' + mkr.name).flexslider(
+                	animation: "slide"
+                	animationLoop: false
+                	itemWidth: 100
+                	itemMargin: 3))
 		return
-	constructor: (map, markers)->
+	constructor: (div, markers)->
 		self = @
 		map_options = {
 			geolocation: false
-			center: {
-				lat: window.helper.LAT,
-				lng: window.helper.LNG
-			}
+			div: div
+			lat: window.helper.LAT,
+			lng: window.helper.LNG
 			zoom: 6
-			marker: {
-				height: 56,
-				width: 56
-			}
-			cluster: {
-				height: 40,
-				width: 40,
-				gridSize: map.data( 'grid-size' )
-			}
 			styles: window.helper.mapStyle(),
-			markers: markers
+			idle: ->
+			  self.loadMarkers()
 		}
-		@map = new (google.maps.Map)(map[0],map_options)
-		google.maps.event.addListener @map, 'idle', ->
-			self.loadMarkers()
-			$('.infoBox').bxSlider
-      	slideWidth: 200
-      	minSlides: 2
-      	maxSlides: 3
-      	slideMargin: 10
+		@map = new (GMaps)(map_options)

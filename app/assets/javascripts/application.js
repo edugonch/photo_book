@@ -16,6 +16,9 @@
 //= require select2
 //= require turbolinks
 //= require jquery.bxslider.min
+//= require jquery.flexslider-min
+//= require unslider
+//= require owl.carousel
 //= require gmaps
 //= require cocoon
 //= require js-routes

@@ -1,5 +1,11 @@
-<div class="infoBox">
-  <% images.each do |img| %>
-    <div class="slide"><%= image_tag img.file.url(:medium) %></div>
-  <%end%>
+<div id="mcontainer">
+	<div class="flexslider" id='<%= name %>'>
+		<ul class="slides">
+			 <% images.each do |img| %>
+				<li>
+				    <%= image_tag img.file.url(:thumb) %>
+				</li>
+			 <%end%>
+		 </ul>
+	</div>
 </div>
