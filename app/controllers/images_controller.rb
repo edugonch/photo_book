@@ -1,6 +1,12 @@
 class ImagesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :delete]
 
+  def index
+    if params[:lat].present? && params[:lng].present?
+      @images = Image.where(lat: params[:lat], lng: params[:lng])
+    end
+  end
+
   def new
     @user = current_user
     puts @user.to_json

@@ -1,9 +1,20 @@
 <div id="mcontainer">
-  <div id='<%= name %>'>
-    <% images.each do |img| %>
-      <div>
-        <div class="image"><img data-lazy="<%= img.file.url(:thumb) %>"/></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div id='<%= name %>'>
+          <% images.each do |img| %>
+            <div>
+              <div class="image"><img data-lazy="<%= img.file.url(:thumb) %>"/></div>
+            </div>
+          <%end%>
+        </div>
       </div>
-    <%end%>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <%= link_to "All images in this point", images_path(lat: lat, lng: lng) %>
+      </div>
+    </div>
   </div>
 </div>

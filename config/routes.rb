@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :images
 
-  get "users/profile", to: "users#profile"
+  get "users/profile/:id", to: "users#profile", as: 'profile'
 
   get "tags", to: "tags#index", as: :tags
 end

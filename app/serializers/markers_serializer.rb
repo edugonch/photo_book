@@ -14,7 +14,7 @@ class MarkersSerializer
         lat: images.first.lat,
         lng: images.first.lng,
         name: tmp_id,
-        html: @view.render(file: 'images/_image_map_marker_content.html.erb', locals: { images: images, name: tmp_id })
+        html: @view.render(file: 'images/_image_map_marker_content.html.erb', locals: { images: images, name: tmp_id, lat: images.first.lat, lng: images.first.lng })
       }
     end
   end
