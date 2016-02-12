@@ -21,14 +21,13 @@ class PhotoBook.Views.Home
             lat: mkr.lat
             lng: mkr.lng
             infoWindow:
-              content: mkr.html
-              domready: ->
-                $('#' + mkr.name).flexslider(
-                	animation: "slide"
-                	animationLoop: false
-                	itemWidth: 100
-                	itemMargin: 3))
-		return
+             content: mkr.html
+             domready: ->
+              $('#' + mkr.name).slick(
+              	lazyLoad: 'ondemand'
+              	slidesToShow: 3
+              	slidesToScroll: 1)
+              console.log("DOM READY"))
 	constructor: (div, markers)->
 		self = @
 		map_options = {

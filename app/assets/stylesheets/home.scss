@@ -2,14 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #mcontainer{
-	width: 350px;
-	height: 150px;
+	  width: 450px;
+    height: 150px;
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow: hidden;
 }
-.marker_container .item{
-  margin: 3px;
-}
-.marker_container .item img{
-  display: block;
-  width: 100px;
-  height: 100px;
+.gm-style-iw {
+   width: 450px !important;
+   background-color: #0CB9F2;
 }

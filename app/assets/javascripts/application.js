@@ -15,10 +15,8 @@
 //= require twitter/bootstrap
 //= require select2
 //= require turbolinks
-//= require jquery.bxslider.min
-//= require jquery.flexslider-min
-//= require unslider
-//= require owl.carousel
+//= require jquery.jcarousel.min
+//= require slick.min
 //= require gmaps
 //= require cocoon
 //= require js-routes

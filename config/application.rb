@@ -22,9 +22,6 @@ module PhotoBook
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
-    config.assets.precompile += ["fontawesome-webfont.ttf",
-                             "fontawesome-webfont.eot",
-                             "fontawesome-webfont.svg",
-                             "fontawesome-webfont.woff"]
+    config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
   end
 end
