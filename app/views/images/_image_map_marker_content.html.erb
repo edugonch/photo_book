@@ -1,18 +1,11 @@
-<div id="mcontainer">
-    <div class="row">
-      <div class="col-md-12">
-        <div id='<%= name %>'>
-          <% images.each do |img| %>
-            <div>
-              <div class="image"><img data-lazy="<%= img.file.url(:thumb) %>"/></div>
-            </div>
-          <%end%>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <%= link_to "All images in this point", images_path(lat: lat, lng: lng) %>
-      </div>
-    </div>
+
+<div id="iw-container">
+  <div class="iw-title"><%= link_to "See all images in this point&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;".html_safe, images_path(lat: lat, lng: lng) %></div>
+  <div class="iw-content">
+   <div class="iw-subTitle">Images</div>
+   <% images.each do |img| %>
+    <img src="<%= img.file.url(:thumb) %>" height="100" width="100">
+   <%end%>
+  </div>
+  <div class="iw-bottom-gradient"></div>
 </div>
