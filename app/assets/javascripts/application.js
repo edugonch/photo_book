@@ -15,8 +15,6 @@
 //= require twitter/bootstrap
 //= require select2
 //= require turbolinks
-//= require jquery.jcarousel.min
-//= require slick.min
 //= require gmaps
 //= require cocoon
 //= require js-routes
