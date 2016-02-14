@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   get "users/profile/:id", to: "users#profile", as: 'profile'
 
   get "tags", to: "tags#index", as: :tags
+
+  get "search", to: "images#search", as: :search
 end

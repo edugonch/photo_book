@@ -19,6 +19,7 @@
 //= require cocoon
 //= require js-routes
 //= require application
+//= require tags
 //= require helpers
 //= require home
 //= require images

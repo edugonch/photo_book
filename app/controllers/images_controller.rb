@@ -12,6 +12,10 @@ class ImagesController < ApplicationController
     puts @user.to_json
   end
 
+  def search
+    @images = Image.where("tags && '{#{params[:tags].join(',')}}'").paginate(:page => params[:page], :per_page => 10)
+  end
+
   def create
     current_user.update_attributes(image_params)
     if current_user.save

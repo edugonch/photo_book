@@ -10,6 +10,7 @@ class Image < ActiveRecord::Base
 
   	validates_attachment_content_type :file, :content_type => /\Aimage\/.*\Z/
 
+
     scope :in_bounding_box, ->(coords){
       where(%{
           ST_Contains(
