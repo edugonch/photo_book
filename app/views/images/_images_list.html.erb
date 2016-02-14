@@ -1,20 +1,25 @@
 <div class="row">
-      <div class="col-md-12">
-        <div class="row">
-          <% images.each do |img| %>
-              <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                  <%= image_tag img.file.url() %>
-                  <div class="caption">
-                    <p><%= img.description %></p>
-                    <% img.tags.each do |tag| %>
-                      <span class="label label-info"><%= tag %></span>
-                    <%end%>
-                    <p><%= link_to "More of this user", profile_path(img.user.id) %></p>
-                  </div>
-                </div>
-              </div>
-          <%end%>
+  <div class="col-md-12">
+    <div class="row">
+      <% images.each do |img| %>
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <%= image_tag img.file.url() %>
+          <div class="caption">
+            <p><%= img.description %></p>
+            <% img.tags.each do |tag| %>
+              <span class="label label-info"><%= tag %></span>
+            <%end%>
+            <p><%= link_to "More of this user", profile_path(img.user.id) %></p>
+          </div>
         </div>
       </div>
+      <%end%>
     </div>
+    <div class="row">
+      <div class='col-md-12'>
+        <%= will_paginate images, renderer: BootstrapPagination::Rails %>
+      </div>
+    </div>
+  </div>
+</div>
