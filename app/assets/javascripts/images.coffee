@@ -55,6 +55,8 @@ class PhotoBook.Views.NewImage
       $(insertedItem).find('#select_change').attr('id', 'user_images_attributes_' + arr[1] + '_tags')
       $(insertedItem).find('select[data-field="tag"]').select2
         multiple: true
+        width: '200px'
+        placeholder: "Tags"
         ajax:
           global: false
           url: Routes.tags_path() + ".json"
