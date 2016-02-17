@@ -9,7 +9,6 @@ class ImagesController < ApplicationController
 
   def new
     @user = current_user
-    puts @user.to_json
   end
 
   def search

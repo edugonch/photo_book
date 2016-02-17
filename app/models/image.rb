@@ -8,10 +8,11 @@ class Image < ActiveRecord::Base
     	medium: '300x300>'
   	}
 
-  	validates_attachment_content_type :file, :content_type => /\Aimage\/.*\Z/
+  validates_attachment_content_type :file, :content_type => /\Aimage\/.*\Z/
+  validates_attachment_presence :file
 
 
-    scope :in_bounding_box, ->(coords){
+  scope :in_bounding_box, ->(coords){
       where(%{
           ST_Contains(
             ST_MakeEnvelope(#{coords}, 4326),
